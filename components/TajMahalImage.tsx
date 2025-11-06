@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 
-const DEFAULT_TAJ_MAHAL_IMAGE = 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Taj_Mahal_%28Edited%29.jpeg/1280px-Taj_Mahal_%28Edited%29.jpeg';
+// The image is now served from the 'public' folder at the root of the project.
+const DEFAULT_TAJ_MAHAL_IMAGE = '/tajmahal.jpeg';
 
 const TajMahalImage: React.FC = () => {
   const [imageUrl, setImageUrl] = useState<string>(DEFAULT_TAJ_MAHAL_IMAGE);
