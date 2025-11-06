@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 
-// The image path is now relative to index.html, making it work locally.
-const DEFAULT_TAJ_MAHAL_IMAGE = './tajmahal.jpeg';
+// This absolute path works with a `public` directory, which is standard for deployment.
+const DEFAULT_TAJ_MAHAL_IMAGE = '/tajmahal.jpeg';
 
 const TajMahalImage: React.FC = () => {
   const [imageUrl, setImageUrl] = useState<string>(DEFAULT_TAJ_MAHAL_IMAGE);
@@ -30,10 +30,11 @@ const TajMahalImage: React.FC = () => {
           alt="View of the Taj Mahal"
           className="w-full h-auto object-cover aspect-video bg-gray-800"
           onError={(e) => {
-            // If the image fails to load, you can replace it or show an error.
-            // For now, we'll just log it to the console.
+            const target = e.target as HTMLImageElement;
             console.error("Failed to load image at path:", DEFAULT_TAJ_MAHAL_IMAGE);
-            (e.target as HTMLImageElement).alt = "Error: Image not found. Please check the file path.";
+            target.alt = "Error: Image not found. Please ensure you have a 'public' folder with 'tajmahal.jpeg' inside it.";
+            // You could add styling here to make the error more visible
+            target.parentElement?.classList.add('border', 'border-red-500', 'p-4');
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
