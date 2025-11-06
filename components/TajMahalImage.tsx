@@ -2,9 +2,9 @@ import React from 'react';
 
 const TajMahalImage: React.FC = () => {
   return (
-    <div className="w-full max-w-5xl mx-auto rounded-xl shadow-2xl shadow-cyan-500/20 overflow-hidden transition-transform duration-500 hover:scale-105 group">
+    <div className="relative w-full max-w-5xl mx-auto rounded-xl shadow-2xl shadow-cyan-500/20 overflow-hidden transition-transform duration-500 hover:scale-105 group">
       <img
-        src="/uploads/tajmahal.jpeg"
+        src="./uploads/tajmahal.jpeg"
         alt="The Taj Mahal in Agra, India"
         className="w-full h-auto object-cover aspect-video"
       />
